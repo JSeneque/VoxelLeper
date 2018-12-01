@@ -747,9 +747,10 @@ GameObject:
   - component: {fileID: 648600498}
   - component: {fileID: 648600502}
   - component: {fileID: 648600503}
-  m_Layer: 0
+  - component: {fileID: 648600504}
+  m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -848,6 +849,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tumblingDuration: 0.2
+--- !u!114 &648600504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 648600497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d9bf7ddf7abc547bddaa0edebea2f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 64
 --- !u!1 &657029703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,8 +1974,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1401102772}
-  - component: {fileID: 1401102771}
   - component: {fileID: 1401102773}
+  - component: {fileID: 1401102771}
   m_Layer: 0
   m_Name: DropPoint
   m_TagString: DropPoint
@@ -2007,6 +2020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cube: {fileID: 1659717573089852, guid: 10033936590ed504d9d840c18474dade, type: 2}
+  ReduceHealthAmount: 1
 --- !u!1 &1404397441
 GameObject:
   m_ObjectHideFlags: 0
