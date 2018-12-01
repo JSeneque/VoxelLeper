@@ -5,6 +5,13 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour {
     public float tumblingDuration = 0.2f;
 
+    private DropCube drop;
+
+    void Start()
+    {
+        drop = GameObject.FindGameObjectWithTag("DropPoint").GetComponent<DropCube>();   
+    }
+
     void Update()
     {
         var dir = Vector3.zero;
@@ -61,5 +68,8 @@ public class PlayerControl : MonoBehaviour {
         }
 
         isTumbling = false;
+
+        // drop a piece of the player behind
+        drop.Spawn();
     }
 }
