@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoveWithPlayer : MonoBehaviour {
     public Transform Player;
 
+
 	// Use this for initialization
 	void Start () {
         MoveTo();
@@ -17,7 +18,7 @@ public class MoveWithPlayer : MonoBehaviour {
 
     void MoveTo()
     {
-        transform.position = new Vector3(Player.position.x, Player.position.y / 2.0f, Player.position.z);
+        transform.position = new Vector3(Player.position.x, Player.position.y , Player.position.z);
         
     }
 
