@@ -2,30 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
-    public int health = 64;
+    public int health = 10;
     public Text healthTextUI;
+
+    private int startHealth;
 
     private void Start()
     {
         // maybe put this somewhere better to manage UI updates
         DisplayHealth();
+        startHealth = health;
     }
 
     public void ReduceHealth(int Amount)
     {
         health -= Amount;
 
-        if (health < 0)
+        if (health <= 0)
         {
             health = 0;
 
+            // reload scene
+            int scene = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(scene, LoadSceneMode.Single);
+
         } else
         {
-            // decrease in size
-            transform.localScale -= new Vector3(0.015f, 0.015f, 0.015f);
+            // shrink the player each move
+            transform.localScale -= new Vector3(transform.localScale.x / startHealth, transform.localScale.y / startHealth, transform.localScale.z / startHealth);
         }
+
+
 
         DisplayHealth();
 
